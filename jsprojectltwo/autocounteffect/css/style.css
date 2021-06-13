@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
+
+* {
+    /* box အနေနဲ့ ဘယ်ညာ ညီအောင်ညီတာ */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    background-color: #7d5fff;
+    color: #fff;
+    height: 100vh;
+    /* vh = viewport height အခုလက်ရှိမှာပေါ်နေတဲ့ screen height */
+
+    /* တတန်းဖြစ်သွားတယ် inline element ဖြစ်သွားတာ*/
+    display: flex;
+    /* horizontal center 
+    justify-content က display မပါပဲအလုပ်မလုပ်ဘူး*/
+    justify-content: center;
+    /* vertical center ထားတာ */
+    align-items: center;
+    /* align-item က height vh မပါရင်အလုပ်မလုပ် */
+
+    /* margin: 0; */
+    /* scroll မရှိရင်သုံးတာ - margin,overflow */
+    overflow: hidden;
+}
+
+.counter-container {
+    /* display ပေးတာက ပြောင်းလွယ်ပြင်လွယ်ဖြစ်အောင် */
+    display: flex;
+    /* vertical တိုင်းပေါ်ချင်ရင် */
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* top&bottom left&right */
+    /* 
+    အပေါ်က ၃ချက်မထည့်ပဲ ဒါတခုပဲသုံးပြီ လုပ်လို့ရတယ်
+    text-align: center; */
+    margin: 30px 50px;
+}
+
+.counter-container .counter {
+    margin-top: 10px;
+    font-size: 60px;
+}
+
+@media (max-width:580px) {
+
+    body {
+        flex-direction: column;
+    }
+}
