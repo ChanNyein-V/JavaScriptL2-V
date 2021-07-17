@@ -6,7 +6,7 @@
 
 body{
     font-family: 'Mulish', sans-serif;
-    background: #000;
+    background-color: #000;
     height: 100vh;
 
     display: flex;
@@ -19,16 +19,14 @@ body{
 
 .btnripple{
     background-color: royalblue;
-    color: #fff;
+
+    color: #ffffff;
     font-size: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
-
-    /* top&bottom left&right */
+    /*top&bottom left&right*/
     padding: 20px 30px;
     border: 1px solid royalblue;
-
-    /* top&bottom left&right */
     margin: 0 10px;
 
     overflow: hidden;
@@ -39,26 +37,21 @@ body{
 .btnripple .circle{
     width: 100px;
     height: 100px;
-    background-color: #fff;
+
+    background-color: #ffffff;
     border-radius: 100%;
 
     position: absolute;
-
     top: 50%;
     left: 50%;
 
-    /* x ဝန်းရိုးကော y ဝန်းရိုးကို translate လုပ်ပေးရမှာ/နုတ်မှာမို့လို့
-    x ကအနောက်ဆုတ်ချင်တော့(left ဘက်သွားချင်တော့) minus value/y ကပေါ်ပြန်တက်ချင်တော့ minus value
-    စလာထဲကပျောက်စေချင်လို့ scale 0 ဆိုပြီပေးလိုက်တာ  */
     transform: translate(-50%,-50%) scale(0);
 
-    animation: myscale;
+    animation-name: myscale;
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
-    /* animation timing function is same as transition */
 }
 
-/* focus is pseudo class */
 .btnripple:focus{
     outline: 0;
 }
@@ -66,6 +59,17 @@ body{
 @keyframes myscale {
     to{
         transform: translate(-50%,-50%) scale(3);
-        opacity: 0;
+        opacity: 0 ;
     }
 }
+
+/*
+animation ရဲ့ keyframes myscale ထဲမှာ opacity ကို zero ပေးရတာက circle ကိုပေါ်လာရင် 3sec ရောက်ရင်
+ပျောက်ချင်လို့ပေးလိုက်တာ အဲလိုမပေးပဲထားရင် circle ကြီးက အလုံးလိုက်ကိုတက်လာမှာ
+
+focus နဲ့ active က တူသလိုနဲ့ သဘောတရားကွဲတယ်
+focus ကကျတော့ textfield တွေမှာဆိုရင် cursor ချတာ button တွေမှာဆိုရင်နှိပ်တာ
+active ကကျတော့ textfield တွေမှာဆိုရင် cursor ချတာပဲ button တွေမှာကျတော့ နှိပ်ရုံတင်မဟုတ်ဘူး နှိပ်ပြီကြောင်းပါပြတာ
+
+overflow ကပိုနေတဲ့အသားတွေကိုဖယ်ထုတ်ပေးတာ
+*/
