@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* margin: 0; */
+    overflow: hidden;
+}
+
+.container{
+    background-color: #fff;
+    border: 3px solid #000;
+    border-radius: 30px;
+    max-width: 1000px;
+    text-align: center;
+    padding: 30px;
+}
+
+.container .code-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* top&bottom left&right */
+    margin: 40px 0px;
+}
+
+.code-container .code{
+    width: 100px;
+    height: 100px;
+    font-size: 75px;
+    font-weight: 300;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    margin: 5px;
+    text-align: center;
+
+    /* For Firefox */
+    -moz-appearance: textfield;
+    appearance: none;
+    
+}
+
+/* .code::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+.code::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+} */
+
+/* For chrome */
+.code::-webkit-outer-spin-button,
+.code::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+.code:valid{
+    border-color:blue;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.container .info{
+    color: #777;
+    background-color: #c2c4c3;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 400px;
+    display: inline-block;
+    line-height: 20px;
+}
+
+@media (max-width:600px) {
+    .code-container{
+        flex-wrap:wrap
+    }
+
+    .code{
+        max-width: 70px;
+        height: 80px;
+        font-size: 60px;
+    }
+}
+
+/* input text field မှာ up/down ရွေးတဲ့ button ကိုဖျောက်ချင်တော့
+vendor prefix ကိုသုံးရမယ် သူကကျတော့ အရင်နဲ့မတူဘူးသုံးတာ
+morzilaa အတွက် ဆိုရင် အရင် အတိုင်းပဲ -moz-appearance: သုံးရင်ရတယ် ဒါပေမဲ့ none ပေးလို့မရဘူး
+အခုကရိုက်တဲ့မှာမို့လို့ string ပြောင်းရမယ် အဲဒါကို textfield ဆိုပြီပေးရမယ်
+
+chrome အတွက်မှာဆိုရင် sudo element ကိုသုံးရတယ် sudo element ရဲ့ webkit-outer/inner-spin-button ဆိုပြီသုံးပေးရမယ်
+inner/outer ပေးတာက number အကြီးအသေးလုပ်တဲ့ button ၂ခုကိုဖျောက်ချင်လို့သုံးတာ
+webkit appearance ကို group selector မသုံးပဲခွဲရေးရတာ အမှန်က အခုက attribute တူနေလို့ group selector သုံးပြီရေးလိုက်တာ
+
+display:inline-block ပေးတာက block အလိုက်ကို inline မှာရှိစေချင်လို့ အပေါ်မှာက container မှာ text-align:center ပေးလိုက်တော့
+ရှိသမျှ text တွေက center ဖြစ်သွားတယ် ဒါပေမဲ့ သူက inline တွေကိုပဲပြောင်းပေးတာ အဲတော့ အခု small ဆိုတဲ့ element ကို center ရောက်ချင်တော့
+inline-block ဆိုပြီပေးလိုက်တာ သူက max-width အတွက်ဖန်တီးပေးလိုက်တာ
+
+flex-wrap:wrap က လက်ရှိ ရှိနေတဲ့ size ပေါ်မှာပဲ fit ဖြစ်နေမှာ ပြောမယ်ဆိုရင် သရေကွင်းပုံစံဆိုလို့ free size လုပ်လိုက်တာ
+
+
+*/

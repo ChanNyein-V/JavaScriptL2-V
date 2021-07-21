@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Mulish', sans-serif;
+    background-color: #ffff99;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100vw;
+    overflow-x: hidden; /*သူက x ဝန်းရိုးရဲ့ scroll ကိုဖျောက်ချင်လို့*/
+    /*overflow-y: hidden;*/
+}
+
+h1{
+    text-align: center;
+}
+
+.box{
+    width: 400px;
+    height: 200px;
+    color: #fff;
+
+    margin: 10px;
+    border-radius: 10px;
+    /*h v b c*/
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    transform: translate(400%);
+    /*ရိုးရိုး translate လည်းသုံးလို့ရသလို့ translateX လည်းသုံးလို့ရတယ်*/
+    /*transform: translateX(400%);*/
+
+    transition: all 0.5s ease-in-out;
+}
+
+.box img{
+    /*width: 100%;*/
+    /*height: 100%;*/
+
+    width: inherit;
+    height: inherit;
+    border-radius: 10px;
+}
+
+.box h2{
+    font-size: 45px;
+    /*v h b c*/
+    text-shadow: 5px 10px 3px rgba(0,0,0,0.5);
+
+    position: absolute;
+
+    z-index: 2;
+}
+
+.box:nth-of-type(even){
+    transform: translate(-400%);
+    /*ရိုးရိုး translate လည်းသုံးလို့ရသလို့ translateX လည်းသုံးလို့ရတယ်*/
+    /*transform: translateX(-400%);*/
+}
+
+/*ပုံကိုပြန်ပြီအလယ်ကိုရောက်စေချင်လို့ သုံးတာ js ကနေလာမှာ*/
+.box.show{
+    transform: translate(0%);
+}

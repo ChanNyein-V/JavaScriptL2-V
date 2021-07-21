@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Mulish', sans-serif;
+    background-color: #000;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    overflow: hidden;
+}
+
+.btnripple{
+    background-color: royalblue;
+
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /*top&bottom left&right*/
+    padding: 20px 30px;
+    border: 1px solid royalblue;
+    margin: 0 10px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.btnripple .circle{
+    width: 100px;
+    height: 100px;
+
+    background-color: #ffffff;
+    border-radius: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%) scale(0);
+
+    animation-name: myscale;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.btnripple:focus{
+    outline: 0;
+}
+
+@keyframes myscale {
+    to{
+        transform: translate(-50%,-50%) scale(3);
+        opacity: 0 ;
+    }
+}
+
+/*
+animation ရဲ့ keyframes myscale ထဲမှာ opacity ကို zero ပေးရတာက circle ကိုပေါ်လာရင် 3sec ရောက်ရင်
+ပျောက်ချင်လို့ပေးလိုက်တာ အဲလိုမပေးပဲထားရင် circle ကြီးက အလုံးလိုက်ကိုတက်လာမှာ
+
+focus နဲ့ active က တူသလိုနဲ့ သဘောတရားကွဲတယ်
+focus ကကျတော့ textfield တွေမှာဆိုရင် cursor ချတာ button တွေမှာဆိုရင်နှိပ်တာ
+active ကကျတော့ textfield တွေမှာဆိုရင် cursor ချတာပဲ button တွေမှာကျတော့ နှိပ်ရုံတင်မဟုတ်ဘူး နှိပ်ပြီကြောင်းပါပြတာ
+
+overflow ကပိုနေတဲ့အသားတွေကိုဖယ်ထုတ်ပေးတာ
+*/

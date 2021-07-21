@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Mulish', sans-serif;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    overflow: hidden;
+}
+
+/* display:flex; ကိုပေးလိုက်တဲ့အချိန်ကျရင် ဘေးတိုက်ဘာလို့မရောက်တာလည်းဆိုတော့ အခုက main element ထဲမှာပဲ div တွေရှိနေလို့/နောက် main element က တခုပဲရှိတဲ့အတွက် 
+justify-content: center; က horizontally center ဖြစ်တာ
+align-items:center; ကကျတော့ vertically center ဖြစ်တာ
+*/
+
+.container{
+    display: flex;
+    width: 80vw;
+}
+
+/* mobile phone/tablets/computer screen အဲလိုတွေရဲ့ screen ရဲ့ height ကိုယူချင်ရင် view-port height နဲ့ယူတယ် (vh) - height:100vh; ဆိုပြီ 
+နောက်အဲလိုပဲ width ကိုယူချင်တယ်ဆိုရင် width:100vw; ဆိုပြီ view-port width ဆိုပြီယူလို့ရတယ် လက်ရှိ ရှိနေတဲ့ screen ရဲ့ width ကိုယူတာ*/
+
+.container .panel{
+    background-size: cover;
+    /* background-size: 100%; */
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80vh; /*up-10/down-10*/
+    border-radius: 50px;
+    cursor: pointer;
+    color: #fff;
+    margin: 10px;
+
+    position: relative;
+
+    flex: 0.5;
+
+    transition: flex 0.7s ease-in-out;
+}
+
+/* background-size:cover; က လက်ရှိ ရှိတဲ့ width/height မှာအပြည့်ပေါ်တာ (cover) က 
+height ကဒီနေရာမှာ 100vh ဆိုပြီယူလို့ရတယ် ဘာလို့လည်းဆိုတော့ အပေါ်မှာက height ကိုသတ်မှတ်ပြီသာမို့လို့
+*/
+
+.panel h3{
+    /* 1rem = 16px */
+    font-size: 1.5rem;
+
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+
+    opacity: 0;
+}
+
+/* position:absolute; ပေးလိုက်တဲ့အချိန်မှာ အပေါ်မှာ position: relative နဲ့ပြန်ဖမ်းရတယ် အဲလိုချိန်မှာ ပုံတွေကပျောက်သွားတယ် ဘာလို့လည်းဆိုတော့
+သူတို့ div ပေါ်မှာမှီခိုနေလို့ အဲတော့ အဲလိုပျောက်သွားတာကို ဘာနဲ့ပြန်ဖမ်းလို့ရတယ်ဆိုရင် flex ဆိုတဲ့ကောင်နဲ့ပြန်ဖမ်းလို့ရတယ် flex:0.5; ဆိုပြီပေးလိုက်ရင်ရပြီ 
+
+စာကိုအောက်ချင်တော့ bottom ဆိုတဲ့ property ကိုသုံးလိုက်တယ် ဘာလို့သုံးလို့ရတာလည်းဆိုတော့ position:absolute; ကြောင့်ရတာ
+count လုပ်တာကျတော့ panel ကနေလုပ်တာ ဘာလို့လည်းဆိုတော့ အပေါ်မှာ panel ကို position:relative; ပေးထားလို့
+left ကလည်း အတူတူပဲ bottom နဲ့
+
+opacity:0; ပေးတာက စာကိုအပေါ်စေချင်လို့ပေးတာ
+*/
+
+.panel.active{
+    flex: 5;
+}
+
+/* flex:5; ပေးလိုက်တာက panel ထဲက flexကို override လုပ်တာနဲ့အတူတူပဲ/နောက်သူက active ဝင်ရင် flex ကဘယ်လောက်ဖြစ်မလဲဆိုတာကို လုပ်တာ */
+
+.panel.active h3{ 
+    opacity: 1;
+}
+
+@media (max-width:500px){
+    .container{
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(5),.panel:nth-of-type(6){
+        display: none;
+    }
+}
+
+/* mobile view ဆိုရင် 500px / tablet view ဆိုရင် 800px 
+
+sudo class (:) တခုပဲပါတယ် 
+
+screen ကိုကျဥ်းလိုက်တဲ့ အချိန်မှာ ပုံကို၄ပုံပဲပေါ်စေချင်တဲ့အတွက် ကျန်တဲ့၂ပုံကိုဖျောက်မယ် အဲဒါကိုဖျောက်ဖို့အတွက် nth-of-type နဲ့လုပ်မယ်
+
+panel တွေမှာချဲ့တဲ့ လုပ်ငန်းစဥ်ကို flex ကလုပ်ပေးတာ
+*/
