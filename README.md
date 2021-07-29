@@ -1,3 +1,3 @@
 # JavaScriptL2-V
   
-  It's your private one. vishu
+  JavaScript Level 2 Projects From local machine.
